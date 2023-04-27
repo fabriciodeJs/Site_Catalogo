@@ -1,0 +1,70 @@
+:root{
+    
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*  Cabeçalho  */
+body {
+    height: 100vh;
+}
+header {
+    height: 5em;
+    background-color: gray;
+}
+
+header #container-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 100px;
+}
+
+header #logo {
+    font-size: 2.5em;
+}
+
+header menu ul{
+    display: flex;
+    
+}
+
+header menu ul li {
+    list-style: none;
+    padding-left: 40px;
+    font-size: 1.2em;
+}
+
+/* Conteúdo */
+
+main {
+    background-color: lightgreen;
+    width: 70vw;
+    margin: auto;
+}
+
+main section{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 2vw;
+    padding: 5vh 1vw;
+}
+
+main section .container-item {
+    cursor: pointer;
+    text-align: center;
+    padding: 1vh;
+}
+
+main section .container-item .card-item {
+    padding: 30px;
+}
+
+main .container-item .card-item img {
+    width: 150px;
+}
