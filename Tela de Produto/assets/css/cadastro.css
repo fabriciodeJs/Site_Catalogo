@@ -1,58 +1,68 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;1,800&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+:root {
+    --font-black: rgb(32, 32, 32);
+    --font-white: rgb(255, 255, 255);
+    --primary-color: rgb(12, 76, 163);
+    --second-color: rgb(0, 149, 218);
+}
+
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Open Sans', sans-serif, 'arial';
+    color: var(--font-white);
 }
 
 /*  Cabeçalho  */
-body {
-    height: 100vh;
-}
-header {
-    height: 5em;
-    background-color: gray;
-}
 
-header #container-cabecalho {
+#container-cabecalho {
+    width: 100%;
+    height: 150px;
+    box-shadow: 5px 5px 10px rgba(0, 149, 218, 0.281);
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 100px;
+
 }
 
-header #logo {
-    font-size: 2.5em;
+#container-cabecalho img {
+    max-width: 200px;
+    max-height: 200px;
+    width: auto;
+    height: auto;
+    margin: auto;
 }
 
-header menu ul{
-    display: flex;
-    
-}
-
-header menu ul li {
-    list-style: none;
-    padding-left: 40px;
-    font-size: 1.2em;
-}
 /* main */
 
 main {
-    width: 70vw;
+    width: 100vw;
+    height: 81vh;
+    padding: 50px;
+    background-image: linear-gradient( var(--primary-color), var(--second-color));
+    background-size: cover;
+}
+
+section {
+    width: 50vw;
     margin: auto;
-    background-color: lightblue;
+    background-color: transparent;
+    border: 2px solid black;
+    backdrop-filter: blur(100px);
+    border-radius: 20px;
 }
 
 main section h1 {
     text-align: center;
-    margin: 5vh 0 ;
+    padding: 20px ;
     font-size: 3rem;
+    font-weight: bold;
 }
 
 main section form{
     display: flex;
     flex-direction: column;
-    background-color: lightcoral;
+    width: 100%;
 }
 form div {
     padding: 15px 0;
@@ -61,20 +71,33 @@ form div {
 
 form .labels {
     font-size: 1.2em;
+    font-weight: bolder;
+    text-shadow: 1px 1px 2px black;
     padding: 0 20px;
 }
 
 form .inputs {
-    width: 40vw;
+    width: 70%;
     height: 25px;
     border-radius: 5px;
     border: none;
-
+    color: black;
+    font-size: 1.1em;
+    font-weight: bolder;
 }
 
 form #botaoSubmit {
     width: 250px;
     height: 35px;
     margin: 50px auto;
-    
+    border-radius: 5px;
+    border: none;
+    background-color: black;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+form #botaoSubmit:hover {
+    background-color: green;
+    font-weight: bolder;
 }

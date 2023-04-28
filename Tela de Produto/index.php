@@ -5,8 +5,6 @@ $query = "SELECT NOME, DESCRICAO, IMAGEM FROM PRODUTO";
 
 $consulta = $mysqli->query($query) or die($mysqli->error);
 
-
-
 ?>
 
 <!DOCTYPE html>
@@ -21,37 +19,25 @@ $consulta = $mysqli->query($query) or die($mysqli->error);
 </head>
 
 <body>
-    <header>
-        <nav id="container-cabecalho">
-            <div id="logo">Logo</div>
-            <menu>
-                <ul>
-                    <li>Home</li>
-                    <li>Categorias</li>
-                    <li>Cadastro</li>
-                    <li>Fale Conosco</li>
-                </ul>
-            </menu>
-        </nav>
+    <header id="container-cabecalho">
+        <img src="assets/img/logo-comemorativa-terwal.webp" alt="Logo Terwal">
     </header>
     <main>
-        <section id="saida">
-            <?php
-
-            while ($dado = $consulta->fetch_array()) {
-
-                echo '<div class="container-item">';
-                echo '<div class="card-item">';
-                echo '<img src"' . $dado['IMAGEM'] .' ">';
-                echo '<h3>' . $dado["NOME"] . '</h3>';
-                echo '<p>' . $dado["DESCRICAO"] . '</p>';
-                echo ' </div>';
-                echo '</div>';
-            } 
-            ?>
+        <section>
+            <?php while ($dado = $consulta->fetch_array()) { ?>
+                <div class="container-item">
+                    <div class="card-item">
+                        <div>
+                            <img id="imagens" src="<?php echo $dado['IMAGEM'] ?>" alt="<?php echo $dado['NOME'] ?>">
+                        </div>
+                        <h3><?php echo $dado['NOME'] ?></h3>
+                        <p><?php echo $dado['DESCRICAO'] ?></p>
+                    </div>
+                </div>
+            <?php } ?>
         </section>
     </main>
-    <script src="assets/js/script.js"></script>
+    <!--<script src="assets/js/script.js"></script>-->
 </body>
 
 </html>
