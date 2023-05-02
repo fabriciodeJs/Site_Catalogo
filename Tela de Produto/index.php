@@ -25,8 +25,7 @@ $consulta = $mysqli->query($query) or die($mysqli->error);
     <main>
         <section>
             <?php while ($dado = $consulta->fetch_array()) { ?>
-                <a href="Produto.php?<?php echo $dado['CODIGO'] ?>" target="_blank">
-                    <div onclick="gerarPagina('<?php echo $dado['CODIGO'] ?>')"  class="container-item">
+                    <div onclick="gerarPagina('<?php echo $dado['CODIGO'] ?>')" class="container-item">
                         <div class="card-item">
                             <div>
                                 <img id="imagens" src="<?php echo $dado['IMAGEM'] ?>" alt="<?php echo $dado['NOME'] ?>">
@@ -36,7 +35,6 @@ $consulta = $mysqli->query($query) or die($mysqli->error);
                             <p class="codigo" ><?php echo $dado['CODIGO'] ?></p>
                         </div>
                     </div>
-                </a>
             <?php } ?>
         </section>
     </main>

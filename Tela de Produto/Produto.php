@@ -1,11 +1,19 @@
 <?php
 include('assets/PHP/Conexao.php');
 
-$query = "SELECT CODIGO, NOME, DESCRICAO, IMAGEM FROM PRODUTO";
+if (isset($_GET['codigo'])) {
+    $codigo = $_GET['codigo'];
+    
+    $query = "SELECT CODIGO, NOME, DESCRICAO, IMAGEM FROM PRODUTO WHERE CODIGO = '$codigo'";
 
-$consulta = $mysqli->query($query) or die($mysqli->error);
+    $consulta = $mysqli->query($query) or die($mysqli->error);
 
-$dado = $consulta->fetch_array();
+    $dado = $consulta->fetch_array();
+}else {
+    echo "ERROR";
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
