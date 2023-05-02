@@ -1,7 +1,7 @@
 <?php
 include('assets/PHP/Conexao.php');
 
-$query = "SELECT NOME, DESCRICAO, IMAGEM FROM PRODUTO";
+$query = "SELECT CODIGO, NOME, DESCRICAO, IMAGEM FROM PRODUTO";
 
 $consulta = $mysqli->query($query) or die($mysqli->error);
 
@@ -15,7 +15,7 @@ $consulta = $mysqli->query($query) or die($mysqli->error);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css" media="all">
-    <title>Produto</title>
+    <title>Catalogo</title>
 </head>
 
 <body>
@@ -25,19 +25,22 @@ $consulta = $mysqli->query($query) or die($mysqli->error);
     <main>
         <section>
             <?php while ($dado = $consulta->fetch_array()) { ?>
-                <div class="container-item">
-                    <div class="card-item">
-                        <div>
-                            <img id="imagens" src="<?php echo $dado['IMAGEM'] ?>" alt="<?php echo $dado['NOME'] ?>">
+                <a href="Produto.php?<?php echo $dado['CODIGO'] ?>" target="_blank">
+                    <div onclick="gerarPagina('<?php echo $dado['CODIGO'] ?>')"  class="container-item">
+                        <div class="card-item">
+                            <div>
+                                <img id="imagens" src="<?php echo $dado['IMAGEM'] ?>" alt="<?php echo $dado['NOME'] ?>">
+                            </div>
+                            <h3><?php echo $dado['NOME'] ?></h3>
+                            <p><?php echo $dado['DESCRICAO'] ?></p>
+                            <p class="codigo" ><?php echo $dado['CODIGO'] ?></p>
                         </div>
-                        <h3><?php echo $dado['NOME'] ?></h3>
-                        <p><?php echo $dado['DESCRICAO'] ?></p>
                     </div>
-                </div>
+                </a>
             <?php } ?>
         </section>
     </main>
-    <!--<script src="assets/js/script.js"></script>-->
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>

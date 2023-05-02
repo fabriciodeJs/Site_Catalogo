@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;1,800&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+:root {
+    --font-black: rgb(32, 32, 32);
+    --font-white: rgb(255, 255, 255);
+    --primary-color: rgb(12, 76, 163);
+    --second-color: rgb(0, 149, 218);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif, 'arial';
+}
+
+/*  Cabeçalho  */
+
+#container-cabecalho {
+    width: 100%;
+    height: 150px;
+    box-shadow: 5px 5px 10px rgba(0, 149, 218, 0.281);
+    display: flex;
+
+}
+
+#container-cabecalho img {
+    max-width: 200px;
+    max-height: 200px;
+    width: auto;
+    height: auto;
+    margin: auto;
+}
+
+/*       MAIN       */
+
+main {
+    height: 81vh;
+
+    display: flex;
+}
+
+main section {
+    width: 50vw;
+    height: 81vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section img {
+    max-width: 500px;
+    max-height: 500px;
+    width: auto;
+    height: auto;
+}
+
+main article {
+    width: 50vw;
+    height: 81vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0px auto;
+
+}
+
+article #container {
+    background-color: rgba(204, 204, 204, 0.52);
+    width: 70%;
+    margin: 10% auto;
+    border-radius: 10px;
+}
+
+article #cabecalho-produto {
+    
+}
+
+
+article #cabecalho-produto p {
+    padding: 30px 30px;
+
+}
+
+article #cabecalho-produto h3 {
+    padding: 0px 30px 30px 30px;
+    font-size: 2em;
+    font-weight: bolder;
+
+}
+
+article hr {
+    margin: 0 25px;
+    border-top: 1px solid var(--primary-color);
+}
+
+
+article #descricao-produto {
+    padding: 20px 30px;
+
+}
+
+article #descricao-produto p {
+    padding: 8px 0;
+}
