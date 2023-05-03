@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;1,800&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 
 :root {
     --font-black: rgb(32, 32, 32);
@@ -11,7 +12,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif, 'arial';
+    font-family: 'Noto Serif', serif;
     color: var(--font-white);
 }
 
@@ -20,9 +21,17 @@
 #container-cabecalho {
     width: 100%;
     height: 150px;
-    box-shadow: 5px 5px 10px rgba(0, 149, 218, 0.281);
+    box-shadow: 5px 5px 10px rgba(0, 149, 218, 0.572);
     display: flex;
 
+}
+
+#container-cabecalho #logo{
+    display: flex;
+    width: 90vw;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10%;
 }
 
 #container-cabecalho img {
@@ -30,25 +39,44 @@
     max-height: 200px;
     width: auto;
     height: auto;
-    margin: auto;
+    
+}
+
+header div {
+    width: 10vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header div a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 35px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bolder;
+    color: var(--font-white);
+    background-color: var(--primary-color);
+}
+
+header div a:hover {
+    transition: .5s;
+    background-color: var(--second-color);
+    color: var(--font-black);
 }
 
 /* main */
 
-main {
-    width: 100vw;
-    height: 81vh;
-    padding: 50px;
-    background-image: linear-gradient( var(--primary-color), var(--second-color));
-    background-size: cover;
-}
-
 section {
     width: 50vw;
-    margin: auto;
-    background-color: transparent;
+    margin: 4vh auto;
+    background-image: linear-gradient( var(--primary-color), var(--second-color));
     border: 2px solid black;
-    backdrop-filter: blur(100px);
     border-radius: 20px;
 }
 
@@ -56,7 +84,7 @@ main section h1 {
     text-align: center;
     padding: 20px ;
     font-size: 3rem;
-    font-weight: bold;
+    font-weight: 900;
 }
 
 main section form{
@@ -65,7 +93,7 @@ main section form{
     width: 100%;
 }
 form div {
-    padding: 15px 0;
+    padding: 20px 0;
     width: 100%;
 }
 
@@ -73,7 +101,7 @@ form .labels {
     font-size: 1.2em;
     font-weight: bolder;
     text-shadow: 1px 1px 2px black;
-    padding: 0 20px;
+    padding: 0 15px;
 }
 
 form .inputs {
@@ -100,4 +128,5 @@ form #botaoSubmit {
 form #botaoSubmit:hover {
     background-color: green;
     font-weight: bolder;
+    color: black;
 }

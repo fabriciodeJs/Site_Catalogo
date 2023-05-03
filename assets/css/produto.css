@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;1,800&family=Playfair+Display:wght@400;500;600;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 :root {
     --font-black: rgb(32, 32, 32);
     --font-white: rgb(255, 255, 255);
@@ -11,7 +10,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif, 'arial';
+    font-family: 'Noto Serif', serif;
 }
 
 /*  Cabeçalho  */
@@ -24,14 +23,49 @@
 
 }
 
+#container-cabecalho #logo{
+    display: flex;
+    width: 90vw;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10%;
+}
+
 #container-cabecalho img {
     max-width: 200px;
     max-height: 200px;
     width: auto;
     height: auto;
-    margin: auto;
+    
 }
 
+header #botao {
+    width: 10vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header div a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 35px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bolder;
+    color: var(--font-white);
+    background-color: var(--primary-color);
+}
+
+header div a:hover {
+    transition: .5s;
+    background-color: var(--second-color);
+    color: var(--font-black);
+}
 /*       MAIN       */
 
 main {

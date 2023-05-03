@@ -11,23 +11,28 @@
 
 <body>
     <header id="container-cabecalho">
-        <img src="assets/img/logo-comemorativa-terwal.webp" alt="Logo Terwal">
+        <div id="logo">
+            <img src="assets/img/logo-comemorativa-terwal.webp" alt="Logo Terwal">
+        </div>
+        <div id="botao">
+            <a href="index.php">Home</a>
+        </div>
     </header>
     <main>
         <section>
             <h1>Cadastro de Produtos</h1>
-            <form action="assets/PHP/envio.php" method="post">
+            <form enctype="multipart/form-data" action="assets/PHP/envio.php" method="post">
                 <div>
                     <label class="labels" for="codigoProduto">Código Do Produto: </label>
-                    <input class="inputs" type="text" name="codigoProduto" id="codigoProduto">
+                    <input class="inputs" type="text" name="codigoProduto" id="codigoProduto" required>
                 </div>
                 <div>
                     <label class="labels" for="nomeProduto">Nome Do Produto: </label>
-                    <input class="inputs" type="text" name="nomeProduto" id="nomeProduto">
+                    <input class="inputs" type="text" name="nomeProduto" id="nomeProduto" required>
                 </div>
                 <div>
                     <label class="labels" for="descricaoProduto">Descrição Do Produto: </label>
-                    <input class="inputs" type="text" name="descricaoProduto" id="descricaoProduto">
+                    <input class="inputs" type="text" name="descricaoProduto" id="descricaoProduto" required>
                 </div>
 
                 <div>

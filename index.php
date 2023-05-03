@@ -20,21 +20,25 @@ $consulta = $mysqli->query($query) or die($mysqli->error);
 
 <body>
     <header id="container-cabecalho">
-        <img src="assets/img/logo-comemorativa-terwal.webp" alt="Logo Terwal">
+        <div id="logo">
+            <img src="assets/img/logo-comemorativa-terwal.webp" alt="Logo Terwal">
+        </div>
+        <div id="botao">
+            <a href="Cadastro.php">Login</a>
+        </div>
     </header>
     <main>
         <section>
             <?php while ($dado = $consulta->fetch_array()) { ?>
-                    <div onclick="gerarPagina('<?php echo $dado['CODIGO'] ?>')" class="container-item">
-                        <div class="card-item">
-                            <div>
-                                <img id="imagens" src="<?php echo $dado['IMAGEM'] ?>" alt="<?php echo $dado['NOME'] ?>">
-                            </div>
-                            <h3><?php echo $dado['NOME'] ?></h3>
-                            <p><?php echo $dado['DESCRICAO'] ?></p>
-                            <p class="codigo" ><?php echo $dado['CODIGO'] ?></p>
+                <div onclick="gerarPagina('<?php echo $dado['CODIGO'] ?>')" class="container-item">
+                    <div class="card-item">
+                        <div>
+                            <img id="imagens" src="<?php echo $dado['IMAGEM'] ?>" alt="<?php echo $dado['NOME'] ?>">
                         </div>
+                        <h3><?php echo $dado['NOME'] ?></h3>
+                        <p><?php echo $dado['DESCRICAO'] ?></p>
                     </div>
+                </div>
             <?php } ?>
         </section>
     </main>

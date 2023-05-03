@@ -3,13 +3,13 @@ include('assets/PHP/Conexao.php');
 
 if (isset($_GET['codigo'])) {
     $codigo = $_GET['codigo'];
-    
+
     $query = "SELECT CODIGO, NOME, DESCRICAO, IMAGEM FROM PRODUTO WHERE CODIGO = '$codigo'";
 
     $consulta = $mysqli->query($query) or die($mysqli->error);
 
     $dado = $consulta->fetch_array();
-}else {
+} else {
     echo "ERROR";
 }
 
@@ -28,7 +28,12 @@ if (isset($_GET['codigo'])) {
 
 <body>
     <header id="container-cabecalho">
-        <img src="assets/img/logo-comemorativa-terwal.webp" alt="Logo Terwal">
+        <div id="logo">
+            <img src="assets/img/logo-comemorativa-terwal.webp" alt="Logo Terwal">
+        </div>
+        <div id="botao">
+            <a href="Cadastro.php">Login</a>
+        </div>
     </header>
     <main>
         <section>
