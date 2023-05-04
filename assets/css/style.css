@@ -86,10 +86,10 @@ main section {
 
 main section .container-item {
     display: flex;
-    width: 300px;
-    height: 350px;
-    /* width: auto; */
-    /* height: auto; */
+    max-width: 300px;
+    max-height: 350px;
+    width: auto; 
+    height: auto; 
     cursor: pointer;
     text-align: center;
     margin: auto;
@@ -117,6 +117,31 @@ main .container-item .card-item h3 {
     padding: 10px;
 }
 
+#paginacao {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+}
+
+#paginacao p, a{
+    padding: 5px 15px;
+    margin: 0 10px;
+    font-size: 1.2em;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bolder;
+    color: var(--font-white);
+    background-color: var(--primary-color);
+}
+
+#paginacao a:hover {
+    transition: .5s;
+    background-color: var(--second-color);
+    color: var(--font-black);
+}
 
 @media screen and (min-width: 950px) and (max-width: 1200px) {
     main section {

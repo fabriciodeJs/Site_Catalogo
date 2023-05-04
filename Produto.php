@@ -22,16 +22,20 @@ if (isset($_GET['codigo'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/img/logo-comemorativa-terwal.webp" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/produto.css">
-    <title>Produto</title>
+    <title><?php echo $dado['NOME'] ?></title>
 </head>
 
 <body>
     <header id="container-cabecalho">
+        <div id="botao-home">
+            <a href="index.php">Home</a>
+        </div>
         <div id="logo">
             <img src="assets/img/logo-comemorativa-terwal.webp" alt="Logo Terwal">
         </div>
-        <div id="botao">
+        <div id="botao-login">
             <a href="Cadastro.php">Login</a>
         </div>
     </header>
