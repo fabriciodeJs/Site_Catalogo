@@ -1,25 +1,34 @@
 <?php
 include('assets/PHP/Conexao.php');
 
-$pagina = 1;
-//PEGA O NUMERO DA PAGINA VIA URL
-if (isset($_GET['pagina']))
-    $pagina = filter_input(INPUT_GET, "pagina", FILTER_VALIDATE_INT);
-
-if (!$pagina)
     $pagina = 1;
+    //PEGA O NUMERO DA PAGINA VIA URL
+    if (isset($_GET['pagina']))
+        $pagina = filter_input(INPUT_GET, "pagina", FILTER_VALIDATE_INT);
 
-$limitePorPagina = 4;
+    if (!$pagina)
+        $pagina = 1;
 
-$pagina_1 = ($pagina * $limitePorPagina) - $limitePorPagina;
+    $limitePorPagina = 4;
 
-$totalRegistro = $mysqli->query("SELECT COUNT(CODIGO) total FROM PRODUTO")->fetch_array()['total'];
+    $pagina_1 = ($pagina * $limitePorPagina) - $limitePorPagina;
+    //TOTAL DE PRODUTOS CADASTRADOS
+    $totalRegistro = $mysqli->query("SELECT COUNT(CODIGO) total FROM PRODUTO")->fetch_array()['total'];
 
-$totalPaginas = ceil($totalRegistro / $limitePorPagina);
+    $totalPaginas = ceil($totalRegistro / $limitePorPagina);
+    
 
-$query = "SELECT CODIGO, NOME, DESCRICAO, IMAGEM FROM PRODUTO LIMIT $pagina_1, $limitePorPagina";
+    if (!empty($_GET['pesquisar'])) {
+        $pesquisa = $_GET['pesquisar'];
+        //PESQUISA NO BANCO DE DADOS
+        $query = "SELECT CODIGO, NOME, DESCRICAO, IMAGEM FROM PRODUTO 
+        WHERE CODIGO LIKE '%$pesquisa%' OR NOME LIKE '%$pesquisa%' OR DESCRICAO LIKE '%$pesquisa%'";
+    }else{
+        //LIMITA QUANTIDADE DE PRODUTOS POR PAGINA
+        $query = "SELECT CODIGO, NOME, DESCRICAO, IMAGEM FROM PRODUTO LIMIT $pagina_1, $limitePorPagina";
+    } 
 
-$consulta = $mysqli->query($query) or die($mysqli->error);
+    $consulta = $mysqli->query($query) or die($mysqli->error);
 
 ?>
 
@@ -41,10 +50,14 @@ $consulta = $mysqli->query($query) or die($mysqli->error);
             <img src="assets/img/logo-comemorativa-terwal.webp" alt="Logo Terwal">
         </div>
         <div id="botao">
-            <a href="Cadastro.php">Login</a>
+            <a href="Cadastro.php">Cadastrar</a>
         </div>
     </header>
     <main>
+        <section id="container-pesquisar">
+            <input type="search" name="pesquisar" id="pesquisar">
+            <button onclick="pesquisarProduto()">pesquisar</button>
+        </section>
         <section>
             <?php while ($dado = $consulta->fetch_array()) { ?>
                 <div onclick="gerarPagina('<?php echo $dado['CODIGO'] ?>')" class="container-item">
@@ -58,23 +71,24 @@ $consulta = $mysqli->query($query) or die($mysqli->error);
                 </div>
             <?php } ?>
         </section>
-
-        <div id="paginacao">
+        <!--VERIFICA SE FOI FEITA A PESQUISA E RETIRA A PAGINAÇÃO-->
+        <?php if(empty($_GET['pesquisar'])): ?>
+            <div id="paginacao">
                 <a href="?pagina=1">Primeira</a>
-                
-                <?php if($pagina > 1): ?>
+
+                <?php if ($pagina > 1) : ?>
                     <a href="?pagina=<?php echo $pagina - 1 ?>"><<</a>
                 <?php endif; ?>
 
                 <p><?php echo $pagina; ?></p>
 
-                <?php if($pagina < $totalPaginas): ?>
+                <?php if ($pagina < $totalPaginas) : ?>
                     <a href="?pagina=<?php echo $pagina + 1 ?>">>></a>
                 <?php endif; ?>
 
                 <a href="?pagina=<?php echo $totalPaginas ?>">Ultima</a>
             </div>
-
+        <?php endif; ?>
     </main>
     <script src="assets/js/script.js"></script>
 </body>

@@ -67,7 +67,50 @@ header div a:hover {
     color: var(--font-black);
 }
 
-/* Conteúdo */
+#container-pesquisar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#container-pesquisar #pesquisar{
+    width: 50%;
+    height: 35PX;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.133);
+    color: var(--font-black);
+    border: none;
+    outline: 3px solid var(--primary-color);
+    font-size: 1.2em;
+    font-weight: 700;
+    padding: 15px;
+    box-shadow: 0px 0px 7px var(--second-color);
+}
+
+#container-pesquisar button{
+    width: 150px;
+    height: 35px;
+    cursor: pointer;
+    border-radius:30px;
+    border: 3px solid var(--primary-color);
+    background-color: rgba(0, 149, 218, 0.759);
+    font-size: 1.1em;
+    font-weight: bolder;
+    box-shadow: 0px 0px 5px var(--second-color);
+}
+
+#container-pesquisar button:hover{
+    transition: .4s;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+
+
+
+/* Conteúdo border: 3px solid var(--primary-color);*/
 
 
 main {
@@ -125,7 +168,7 @@ main .container-item .card-item h3 {
     padding: 50px;
 }
 
-#paginacao p, a{
+#paginacao p, #paginacao a{
     padding: 5px 15px;
     margin: 0 10px;
     font-size: 1.2em;
