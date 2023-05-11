@@ -28,7 +28,7 @@
     width: 90vw;
     align-items: center;
     justify-content: center;
-    margin-left: 10%;
+    margin-left: 11%;
 }
 
 #container-cabecalho img {
@@ -39,7 +39,7 @@
     
 }
 
-header div {
+header #botao {
     width: 10vw;
     display: flex;
     align-items: center;

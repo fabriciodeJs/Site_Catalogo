@@ -50,7 +50,7 @@ include('assets/PHP/Conexao.php');
             <img src="assets/img/logo-comemorativa-terwal.webp" alt="Logo Terwal">
         </div>
         <div id="botao">
-            <a href="Cadastro.php">Cadastrar</a>
+            <a href="login.php">Login</a>
         </div>
     </header>
     <main>

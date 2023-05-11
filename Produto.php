@@ -36,7 +36,7 @@ if (isset($_GET['codigo'])) {
             <img src="assets/img/logo-comemorativa-terwal.webp" alt="Logo Terwal">
         </div>
         <div id="botao-login">
-            <a href="Cadastro.php">Login</a>
+            <a href="login.php">Login</a>
         </div>
     </header>
     <main>
