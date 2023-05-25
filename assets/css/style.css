@@ -168,7 +168,7 @@ main .container-item .card-item h3 {
     padding: 50px;
 }
 
-#paginacao p, #paginacao a{
+#paginacao p, #paginacao a,i{
     padding: 5px 15px;
     margin: 0 10px;
     font-size: 1.2em;

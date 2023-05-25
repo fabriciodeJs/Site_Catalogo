@@ -1,11 +1,19 @@
 <?php
 $hostName = "localhost";
-$bancoDeDados = "catalogo";
+$bancoDeDados = "teste";
 $usuario = "root";
 $senha = "";
 
-$mysqli = new mysqli($hostName, $usuario, $senha, $bancoDeDados);
-if ($mysqli->connect_error) {
-    echo "FALHA AO CONECTAR: (" . $mysqli->connect_error . ") " . $mysqli->connect_error;
+
+try{
+    // $mysqli = new PDO($hostName, $usuario, $senha, $bancoDeDados);
+    $conn = new PDO("mysql:host=$hostName;dbname=" . $bancoDeDados, $usuario, $senha );
+} catch(PDOException $error) {
+    echo "FALHA AO CONECTAR: (" . $error->getMessage(). ") ";
 }
 
+
+
+// if ($mysqli->connect_error) {
+//    
+// }

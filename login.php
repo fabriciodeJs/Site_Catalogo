@@ -1,8 +1,6 @@
 <?php
 if (!empty($_POST['login']) and !empty($_POST['senha'])) {
-    echo header("location: assets/php/validacao.php");
-}else{
-    $alerta = '<p style="text-align: center;">Error</p>';
+    echo header("location: Cadastro.php");
 }
 
 ?>
