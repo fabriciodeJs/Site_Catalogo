@@ -25,25 +25,25 @@
       <form enctype="multipart/form-data" action="assets/PHP/envioTeste.php" method="post">
         <div>
           <label class="labels" for="codigoProduto">Código Do Produto: </label>
-          <input class="inputs" type="text" name="codigoProduto" id="codigoProduto">
+          <input class="inputs" type="text" name="codigoProduto" id="codigoProduto" required>
         </div>
         <div>
           <label class="labels" for="nomeProduto">Nome Do Produto: </label>
-          <input class="inputs" type="text" name="nomeProduto" id="nomeProduto">
+          <input class="inputs" type="text" name="nomeProduto" id="nomeProduto" required>
         </div>
         <div>
           <label class="labels" for="descricaoProduto">Descrição Do Produto: </label>
-          <input class="inputs" type="text" name="descricaoProduto" id="descricaoProduto">
+          <input class="inputs" type="text" name="descricaoProduto" id="descricaoProduto" required>
         </div>
 
         <div>
           <label class="labels" for="valorProduto">Valor Do Produto: </label>
-          <input class="inputs" type="text" name="valorProduto" id="valorProduto">
+          <input class="inputs" type="text" name="valorProduto" id="valorProduto" required>
         </div>
 
         <div>
           <label class="labels" for="imagemProduto">Imagem Do Produto: </label>
-          <input class="inputs" type="file" multiple="mutiple" name="imagemProduto[]" id="imagemProduto">
+          <input class="inputs" type="file" multiple="mutiple" name="imagemProduto[]" id="imagemProduto" required>
         </div>
         <input id="botaoSubmit" type="submit" value="Cadastrar">
       </form>

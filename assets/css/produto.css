@@ -80,28 +80,49 @@ header div a:hover {
 /*       MAIN       */
 
 main {
-    height: 81vh;
     display: flex;
 }
 
 main section {
-    width: 50vw;
-    height: 81vh;
+    width: 60vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
 
+main section .navegacao-img {
+    width: 100px;
+    height: 100px;
+    margin: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5em;
+    cursor: pointer;
+}
+
+section #container-img{
+    max-width: 500px;
+    max-height: 500px;
+    width: 500px;
+    height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 section img {
-    max-width: 500px;
-    max-height: 500px;
-    width: auto;
-    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 400px;
+    object-fit: contain;
+    margin: 0;
 }
 
 main article {
-    width: 50vw;
+    width: 40vw;
     height: 81vh;
     display: flex;
     flex-direction: column;
@@ -111,8 +132,8 @@ main article {
 
 article #container {
     background-color: rgba(204, 204, 204, 0.52);
-    width: 70%;
-    margin: 10% auto;
+    width: 90%;
+    margin-top: 10%;
     border-radius: 10px;
 }
 

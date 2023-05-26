@@ -1,17 +1,21 @@
 <?php
-include('assets/PHP/Conexao.php');
+include_once('assets/PHP/Conexao.php');
 
 if (isset($_GET['codigo'])) {
-    $codigo = $_GET['codigo'];
+  $codigo = $_GET['codigo'];
 
-    $query = "SELECT PRODUTO.CODIGO, PRODUTO.NOME, PRODUTO.DESCRICAO, IMAGENS.IMAGEM_1 FROM PRODUTO JOIN IMAGENS
-    ON PRODUTO.CODIGO = IMAGENS.CODIGO_PRODUTO WHERE IMAGENS.CODIGO_PRODUTO = '$codigo' LIMIT 1";
+  $query = "SELECT PRODUTO.CODIGO, PRODUTO.NOME, PRODUTO.DESCRICAO, IMAGENS.IMAGEM_1, IMAGENS.IMAGEM_2, IMAGENS.IMAGEM_3, IMAGENS.IMAGEM_4,
+    IMAGENS.IMAGEM_5, IMAGENS.IMAGEM_6 FROM PRODUTO JOIN IMAGENS
+    ON PRODUTO.CODIGO = IMAGENS.CODIGO_PRODUTO WHERE IMAGENS.CODIGO_PRODUTO = '$codigo' ";
 
-    $consulta = $conn->query($query) or die($conn->$error);
+  $consulta = $conn->query($query) or die($conn->$error);
 
-    $dado = $consulta->fetch(PDO::FETCH_BOTH);
+
+
+
+  $dado = $consulta->fetch(PDO::FETCH_BOTH);
 } else {
-    echo "ERROR";
+  echo "ERROR";
 }
 
 
@@ -42,7 +46,15 @@ if (isset($_GET['codigo'])) {
   </header>
   <main>
     <section>
-      <img src="<?php echo $dado['IMAGEM_1'] ?>" alt="<?php echo $dado['NOME'] ?>">
+      <div onclick="navegar(-1)" id="seta-left" class="navegacao-img">
+        <i class="fa-solid fa-arrow-left"></i>
+      </div>
+      <div id="container-img">
+        <img id="img" src="" alt="<?php echo $dado['NOME'] ?>">
+      </div>
+      <div onclick="navegar(1)" id="seta-right" class="navegacao-img">
+        <i id="right" class="fa-solid fa-arrow-right"></i>
+      </div>
     </section>
     <article>
       <div id="container">
@@ -62,6 +74,43 @@ if (isset($_GET['codigo'])) {
       </div>
     </article>
   </main>
+  <script src="https://kit.fontawesome.com/546ab0e97a.js" crossorigin="anonymous"></script>
+  <!-- <script src="assets/js/produto.js"></script> -->
+  <script>
+    var indice = 1;
+    var totalImages = 0;
+    var imagens = [
+      <?php
+      for ($i = 1; $i <= 6; $i++) {
+        //COLOCANDO AS IMAGENS NO ARRAY
+        $imagem = $dado["IMAGEM_" . $i];
+        if (!empty($imagem)) {
+          echo "'" . $imagem . "',";
+        }
+      }
+      ?>
+    ];
+    // EXIBIR IMAGENS
+    function exibirImagem() {
+      const imgElement = document.querySelector("#img");
+      imgElement.src = imagens[indice  - 1];
+      imgElement.alt = "<?php echo $dado['NOME']; ?>";
+    }
+    //NAVEGAR ENTRE AS FOTOS
+    function navegar(direcao) {
+      indice  += direcao;
+      // VERIFICA SE CHEGOU AO LIMITE DE IMG
+      if (indice  < 1) {
+        indice  = totalImages;
+      } else if (indice  > totalImages) {
+        indice = 1;
+      }
+      exibirImagem();
+    }
+    // MOSTRA AS IMG QUANDO A PAGINA CARREGA
+    totalImages = imagens.length;
+    exibirImagem();
+  </script>
 </body>
 
 </html>
