@@ -1,5 +1,5 @@
 <?php
-
+/*
 include('Conexao.php');
 
 // VALIDANDO INPUTS E ATRIBUIDO A VARIAVEIS
@@ -8,14 +8,14 @@ if (isset($_POST['nomeProduto']) and $_POST['codigoProduto'] and $_POST['descric
   $codigoProduto = $_POST['codigoProduto'];
   $descricaoProduto = $_POST['descricaoProduto'];
   $valorProduto = $_POST['valorProduto'];
+  
 
   // VALIDAÇÃO DE ENVIO DE IMAGEM
-  if (isset($_FILES['imagemProduto'])) {
+  if (isset($_FILES['imagemProduto']) isset($_FILES['videoProduto'])) {
     //RECEBENDO IMG
     $imagemProduto = $_FILES['imagemProduto'];
-
-    //RECUPERANDO ULTIMO ID CADASTRADO
-    // $id_Produto = $conn->lastInsertId();
+    $videoProduto = $_POST['videoProduto'];
+    ;
 
     //PASTA QUE SERA SALVO A IMAGEM 
     $pastaServ = "../img/teste/$codigoProduto/";
@@ -87,4 +87,7 @@ if (isset($_POST['nomeProduto']) and $_POST['codigoProduto'] and $_POST['descric
 }
 echo header("location: ../../Cadastro.php");
 // echo '<h1>Prencha todos os Campos</h1>';
-// echo '<a href="../../Cadastro.php">Voltar</a>';
+// echo '<a href="../../Cadastro.php">Voltar</a>'; 
+
+*/
+?>

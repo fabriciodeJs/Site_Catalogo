@@ -45,6 +45,10 @@
           <label class="labels" for="imagemProduto">Imagem Do Produto: </label>
           <input class="inputs" type="file" multiple="mutiple" name="imagemProduto[]" id="imagemProduto" required>
         </div>
+        <div>
+          <label class="labels" for="videoProduto">Video Do Produto: </label>
+          <input class="inputs" type="file" name="videoProduto" accept="video/mp4, video/mov, video/mkv" id="videoProduto" required>
+        </div>
         <input id="botaoSubmit" type="submit" value="Cadastrar">
       </form>
     </section>

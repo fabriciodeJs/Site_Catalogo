@@ -1,33 +1,20 @@
-var indice = 1;
-    var totalImages = 0;
-    var imagens = [
-      <?php
-      for ($i = 1; $i <= 6; $i++) {
-        //COLOCANDO AS IMAGENS NO ARRAY
-        $imagem = $dado["IMAGEM_" . $i];
-        if (!empty($imagem)) {
-          echo "'" . $imagem . "',";
-        }
-      }
-      ?>
-    ];
-    // EXIBIR IMAGENS
-    function exibirImagem() {
-      const imgElement = document.querySelector("#img");
-      imgElement.src = imagens[indice  - 1];
-      imgElement.alt = "<?php echo $dado['NOME']; ?>";
-    }
-    //NAVEGAR ENTRE AS FOTOS
-    function navegar(direcao) {
-      indice  += direcao;
-      // VERIFICA SE CHEGOU AO LIMITE DE IMG
-      if (indice  < 1) {
-        indice  = totalImages;
-      } else if (indice  > totalImages) {
-        indice = 1;
-      }
-      exibirImagem();
-    }
-    // MOSTRA AS IMG QUANDO A PAGINA CARREGA
-    totalImages = imagens.length;
-    exibirImagem();
+function mostraVideo() {
+  const imgElement = document.querySelector('#img');
+  const videoElement = document.querySelector('#video');
+  const botaoPlay = document.querySelector('#botao-play');
+  const botaoImg = document.querySelector('#botao-img');
+
+  if (imgElement.style.display === 'flex') {
+    imgElement.style.display = 'none';
+    videoElement.style.display = 'flex';
+    botaoPlay.style.display = 'none';
+    botaoImg.style.display = 'flex';
+  }else{
+    imgElement.style.display = 'flex';
+    videoElement.style.display = 'none';
+    botaoPlay.style.display = 'flex';
+    botaoImg.style.display = 'none';
+    videoElement.pause();
+  }
+  
+}
